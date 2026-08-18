@@ -1,0 +1,62 @@
+{
+  "_comment": "Example Block Kit payload for the approval card posted to the deal desk channel",
+  "text": "🔔 Deal Exemption Request — Acme Corp @approver",
+  "blocks": [
+    {
+      "type": "header",
+      "text": { "type": "plain_text", "text": "🔔 Deal Exemption Request" }
+    },
+    { "type": "divider" },
+    {
+      "type": "section",
+      "fields": [
+        { "type": "mrkdwn", "text": "*Account:*\nAcme Corp" },
+        { "type": "mrkdwn", "text": "*Deal:*\nAcme Corp - Enterprise 2026" },
+        { "type": "mrkdwn", "text": "*Requested Discount:*\n15%" },
+        { "type": "mrkdwn", "text": "*Submitted by:*\n<@SUBMITTER_SLACK_ID>" }
+      ]
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Justification:*\nCompetitive pressure from a lower-priced competitor. Customer has been with us 3 years and is at renewal."
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*AI Risk Assessment:*\nLow risk — long-term customer with strong usage metrics. Discount is within standard competitive range."
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*AI Recommendation:* ✅ Approve — retaining a 3-year customer at 15% discount is preferable to churn risk."
+      }
+    },
+    { "type": "divider" },
+    {
+      "type": "actions",
+      "block_id": "approval_actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": { "type": "plain_text", "text": "✅ Approve" },
+          "style": "primary",
+          "action_id": "deal_exemption_approve",
+          "value": "{\"dealId\":\"deal_id_001\",\"submitterId\":\"SUBMITTER_SLACK_ID\",\"accountName\":\"Acme Corp\",\"discount\":\"15%\"}"
+        },
+        {
+          "type": "button",
+          "text": { "type": "plain_text", "text": "❌ Deny" },
+          "style": "danger",
+          "action_id": "deal_exemption_deny",
+          "value": "{\"dealId\":\"deal_id_001\",\"submitterId\":\"SUBMITTER_SLACK_ID\",\"accountName\":\"Acme Corp\"}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "_comment": "Example Block Kit payload for the deal exemption form modal",
+  "type": "modal",
+  "callback_id": "deal_exemption_submit",
+  "title": { "type": "plain_text", "text": "Deal Exemption Request" },
+  "submit": { "type": "plain_text", "text": "Submit" },
+  "close": { "type": "plain_text", "text": "Cancel" },
+  "private_metadata": "{\"accountName\":\"Acme Corp\"}",
+  "blocks": [
+    {
+      "type": "input",
+      "block_id": "deal_select",
+      "label": { "type": "plain_text", "text": "Deal" },
+      "element": {
+        "type": "static_select",
+        "action_id": "deal_id",
+        "placeholder": { "type": "plain_text", "text": "Select a deal" },
+        "options": [
+          {
+            "text": { "type": "plain_text", "text": "Acme Corp - Enterprise 2026" },
+            "value": "deal_id_001"
+          },
+          {
+            "text": { "type": "plain_text", "text": "Acme Corp - Pro Plan Renewal" },
+            "value": "deal_id_002"
+          }
+        ]
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "discount_block",
+      "label": { "type": "plain_text", "text": "Requested Discount (%)" },
+      "element": {
+        "type": "number_input",
+        "action_id": "discount_pct",
+        "is_decimal_allowed": true,
+        "min_value": "0",
+        "max_value": "100"
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "justification_block",
+      "label": { "type": "plain_text", "text": "Justification" },
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "justification",
+        "multiline": true,
+        "placeholder": { "type": "plain_text", "text": "Why is this exemption needed?" }
+      }
+    }
+  ]
+}
