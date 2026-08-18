@@ -242,4 +242,4 @@ See [`.env.example`](.env.example) for all required configuration.
 
 Ricardo Guardado — [linkedin.com/in/ricardoguardado](https://linkedin.com/in/ricardoguardado) · [github.com/RicardoG2005](https://github.com/RicardoG2005)
 
-Built during an internship on the Revenue Operations team.
+Built during an internship at [Lovable](https://lovable.dev) on the Revenue Operations team.
